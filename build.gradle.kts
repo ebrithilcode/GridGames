@@ -31,13 +31,25 @@ repositories {
     //mavenCentral()
 }
 
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+
 dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation(kotlin("stdlib-jdk8"))
 
     // Use the Kotlin test library.
-    testImplementation(kotlin("test"))
+    //testImplementation(kotlin("test"))
 
     // Use the Kotlin JUnit integration.
-    testImplementation(kotlin("test-junit"))
+    //testImplementation(kotlin("test-junit"))
+
+    testCompile("org.assertj:assertj-core:3.11.1")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.1")
 }
+
